@@ -4,13 +4,7 @@ pipeline {
        
            stages{
 
-             stage( 'Checkout  GIT' ){
-                       steps{
-                          echo 'Pulling ... ';
-                              git branch:  'main' ,
-                              url :'https://github.com/wiem689/Timesheet'
-                              }
-                    }
+           
 
             stage("Test,Build"){
                steps{
