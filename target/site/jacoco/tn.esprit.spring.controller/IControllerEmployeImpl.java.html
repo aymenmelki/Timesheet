@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>IControllerEmployeImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Timesheet-spring-boot-core-data-jpa-mvc-REST-1</a> &gt; <a href="index.source.html" class="el_package">tn.esprit.spring.controller</a> &gt; <span class="el_source">IControllerEmployeImpl.java</span></div><h1>IControllerEmployeImpl.java</h1><pre class="source lang-java linenums">package tn.esprit.spring.controller;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import tn.esprit.spring.entities.Contrat;
+import tn.esprit.spring.entities.Employe;
+import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.entities.Mission;
+import tn.esprit.spring.entities.Timesheet;
+import tn.esprit.spring.services.IEmployeService;
+import tn.esprit.spring.services.IEntrepriseService;
+import tn.esprit.spring.services.ITimesheetService;
+
+
+@Controller
+<span class="nc" id="L20">public class IControllerEmployeImpl  {</span>
+	@Autowired
+	IEmployeService iemployeservice;
+	@Autowired
+	IEntrepriseService ientrepriseservice;
+	@Autowired
+	ITimesheetService itimesheetservice;
+
+	public int ajouterEmploye(Employe employe)
+	{
+<span class="nc" id="L30">		iemployeservice.ajouterEmploye(employe);</span>
+<span class="nc" id="L31">		return employe.getId();</span>
+	}
+    
+	public void mettreAjourEmailByEmployeId(String email, int employeId) {
+<span class="nc" id="L35">		iemployeservice.mettreAjourEmailByEmployeId(email, employeId);</span>
+		
+<span class="nc" id="L37">	}</span>
+
+	public void affecterEmployeADepartement(int employeId, int depId) {
+<span class="nc" id="L40">		iemployeservice.affecterEmployeADepartement(employeId, depId);</span>
+		
+<span class="nc" id="L42">	}</span>
+
+
+	
+	public void desaffecterEmployeDuDepartement(int employeId, int depId)
+	{
+<span class="nc" id="L48">		iemployeservice.desaffecterEmployeDuDepartement(employeId, depId);</span>
+<span class="nc" id="L49">	}</span>
+
+	
+	public int ajouterContrat(Contrat contrat) {
+<span class="nc" id="L53">		iemployeservice.ajouterContrat(contrat);</span>
+<span class="nc" id="L54">		return contrat.getReference();</span>
+	}
+	
+	public void affecterContratAEmploye(int contratId, int employeId)
+	{
+<span class="nc" id="L59">		iemployeservice.affecterContratAEmploye(contratId, employeId);</span>
+<span class="nc" id="L60">	}</span>
+
+	
+	public String getEmployePrenomById(int employeId) {
+<span class="nc" id="L64">		return iemployeservice.getEmployePrenomById(employeId);</span>
+	}
+
+	
+	public void deleteEmployeById(int employeId) {
+<span class="nc" id="L69">		iemployeservice.deleteEmployeById(employeId);</span>
+		
+<span class="nc" id="L71">	}</span>
+	public void deleteContratById(int contratId) {
+<span class="nc" id="L73">		iemployeservice.deleteContratById(contratId);</span>
+<span class="nc" id="L74">	}</span>
+
+	
+	public int getNombreEmployeJPQL() {
+		
+<span class="nc" id="L79">		return iemployeservice.getNombreEmployeJPQL();</span>
+	}
+
+	
+	public List&lt;String&gt; getAllEmployeNamesJPQL() {
+		
+<span class="nc" id="L85">		return iemployeservice.getAllEmployeNamesJPQL();</span>
+	}
+
+	
+	public List&lt;Employe&gt; getAllEmployeByEntreprise(Entreprise entreprise) {
+<span class="nc" id="L90">		return iemployeservice.getAllEmployeByEntreprise(entreprise);</span>
+	}
+
+
+	public void mettreAjourEmailByEmployeIdJPQL(String email, int employeId) {	
+<span class="nc" id="L95">	iemployeservice.mettreAjourEmailByEmployeIdJPQL(email, employeId);</span>
+		
+<span class="nc" id="L97">	}</span>
+
+
+	public void deleteAllContratJPQL() {
+<span class="nc" id="L101">		iemployeservice.deleteAllContratJPQL();</span>
+		
+<span class="nc" id="L103">	}</span>
+
+	
+	public float getSalaireByEmployeIdJPQL(int employeId) {
+	
+<span class="nc" id="L108">		return iemployeservice.getSalaireByEmployeIdJPQL(employeId);</span>
+	}
+
+
+	public Double getSalaireMoyenByDepartementId(int departementId) {
+	
+<span class="nc" id="L114">		return iemployeservice.getSalaireMoyenByDepartementId(departementId);</span>
+	}
+
+	
+	
+	public List&lt;Timesheet&gt; getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
+			Date dateFin) {
+<span class="nc" id="L121">		return iemployeservice.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);</span>
+	}
+
+
+
+
+	public List&lt;Employe&gt; getAllEmployes() {
+		
+<span class="nc" id="L129">		return iemployeservice.getAllEmployes();</span>
+	}
+
+	
+	
+
+	
+	
+
+	
+	
+
+	
+	
+    
+	
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
