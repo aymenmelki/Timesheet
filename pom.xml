@@ -89,14 +89,12 @@
 	<distributionManagement>
     <snapshotRepository>
        <id>deploymentRepo</id>
-	    <username>admin</username>
-      <password>samar2008</password>
+	
       <url>http://localhost:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
               <id>deploymentRepo</id>
-	    <username>admin</username>
-      <password>samar2008</password>
+	  
       <url>http://localhost:8081/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
