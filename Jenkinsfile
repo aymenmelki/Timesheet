@@ -2,7 +2,7 @@ pipeline {
 
     environment { 
 
-        registry = "aymenca/https://hub.docker.com/repository/docker/aymenca/doc" 
+        registry = "aymenca/aymenca/doc" 
 
         registryCredential = 'dockerhub' 
 
