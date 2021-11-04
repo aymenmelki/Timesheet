@@ -2,7 +2,7 @@ pipeline {
 
     environment { 
 
-        registry = "aymenca/aymenca/doc" 
+        registry = "aymenca/aymenca/doc1" 
 
         registryCredential = 'aymemm' 
 
