@@ -3,7 +3,7 @@ pipeline {
 3
         registry = "YourDockerhubAccount/YourRepository" 
 4
-        registryCredential = 'dockerhub_id' 
+        registryCredential = 'dockerhub' 
 5
         dockerImage = '' 
 6
