@@ -2,7 +2,7 @@ pipeline {
 
     environment { 
 
-        registry = "aymenca/https://github.com/aymenmelki/Timesheet" 
+        registry = "aymenca/aymenca/doc" 
 
         registryCredential = 'dockerhub_id' 
 
