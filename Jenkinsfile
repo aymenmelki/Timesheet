@@ -1,53 +1,24 @@
-pipeline {
+pipeline { 
+
     environment { 
 
         registry = "YourDockerhubAccount/YourRepository" 
 
-        registryCredential = 'dockerhub' 
+        registryCredential = 'dockerhub_id' 
 
         dockerImage = '' 
 
     }
 
-       agent any
-       
-           stages{
+    agent any 
 
-           
-
-            stage("Test,Build"){
-               steps{
-
-                   bat "mvn clean install"
-                    }
-
-                  }
-
-              stage("package"){
-               steps{
-
-                   bat "mvn package"
-                    }
-
-                  }
-                  
-               stage("Sonar"){
-               steps{
-
-                   bat "mvn sonar:sonar"
-                    }
-
-                  }
-             
-                  
-                  
-                  
+    stages { 
 
         stage('Cloning our Git') { 
 
             steps { 
 
-                git 'https://github.com/aymenmelki/Timesheet' 
+                git 'https://github.com/YourGithubAccount/YourGithubRepository.git' 
 
             }
 
@@ -96,24 +67,5 @@ pipeline {
         } 
 
     }
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                
-                  
-           }
-       
-       
-       
-       
+
 }
