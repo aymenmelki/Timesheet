@@ -82,15 +82,7 @@ pipeline {
         
         
 
-        stage('Cloning our Git') { 
-
-            steps { 
-
-                git 'https://github.com/aymenmelki/Timesheet' 
-
-            }
-
-        } 
+      
 
         stage('Building our image') { 
 
