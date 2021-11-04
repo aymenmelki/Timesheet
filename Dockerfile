@@ -1,4 +1,4 @@
 FROM openjdk:8-jdk-alpine
 EXPOSE 8083
-ADD target/docker-spring-boot.war docker-spring-boot.war
+ADD target/Timesheet.war Timesheet.war
 ENTRYPOINT ["java","-jar","/docker-spring-boot.war"]
