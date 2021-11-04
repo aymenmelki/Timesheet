@@ -2,7 +2,7 @@ pipeline {
 
     environment { 
 
-        registry = "YourDockerhubAccount/YourRepository" 
+        registry = "aymenca/https://github.com/aymenmelki/Timesheet" 
 
         registryCredential = 'dockerhub' 
 
